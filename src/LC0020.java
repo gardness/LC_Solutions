@@ -20,4 +20,38 @@ public class LC0020 {
 
         return stack.isEmpty();
     }
+
+
+    // "([)]"
+    public boolean isValid1(String s) {
+        // cc
+        if (s == null || s.length() == 0) {
+            return true;
+        }
+
+        Stack<Character> stack = new Stack<>();
+
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+
+            if (c == '(' || c == '[' || c == '{') {
+                stack.push(c);
+            } else {
+                if (stack.isEmpty()) {
+                    return false;
+                } else {
+                    char tmp = stack.pop();
+
+                    if ((c == ')' && tmp == '(') || (c == ']' && tmp == '[') || (c == '}' && tmp == '{')) {
+                        continue;
+                    } else {
+                        return false;
+                    }
+                }
+            }
+        }
+
+        return stack.isEmpty();
+    }
+
 }

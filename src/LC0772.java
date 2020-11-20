@@ -26,7 +26,7 @@ public class LC0772 {
             char c = s.charAt(i);
 
             if (Character.isDigit(c)) {
-                num = s.charAt(i) - '0';
+                num = s.charAt(i++) - '0';
 
                 while (i < s.length() && Character.isDigit(s.charAt(i))) {
                     num = num * 10 + s.charAt(i++) - '0';
@@ -73,5 +73,9 @@ public class LC0772 {
         }
     }
 
+    public static void main(String[] args) {
+        LC0772 solution = new LC0772();
+        solution.calculate("-1+2");
+    }
 
 }
