@@ -17,14 +17,14 @@ public class LC0270 {
             double diff = Math.abs(cur.val - target);
 
             if (diff < DELTA) {
-                return root.val;
+                return cur.val;
             } else if (diff < Math.abs(min.val - target)) {
                 min = cur;
             }
 
-            if (root.val < target) {
+            if (cur.val < target) {
                 cur = cur.right;
-            } else if (root.val > target) {
+            } else if (cur.val > target) {
                 cur = cur.left;
             }
         }
