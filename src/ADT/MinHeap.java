@@ -31,7 +31,7 @@ public class MinHeap {  //TODO: generics, unlimited, comparator
     }
 
     MinHeap(int[] array) {
-        this.array = Arrays.copyOf(array, array.length * 2);
+        this.array = Arrays.copyOf(array, array.length * 2);    //  You don't have to expand the array now.
         heapify();
     }
 

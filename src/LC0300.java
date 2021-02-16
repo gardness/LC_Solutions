@@ -63,8 +63,10 @@ public class LC0300 {
         int nontaken = lengthOfLIS1(nums, prevIdx, curPos + 1, memo);
 
         memo[prevIdx + 1][curPos] = Math.max(taken, nontaken);
+
         return memo[prevIdx + 1][curPos];
     }
+
 
     public static void main(String[] args) {
         LC0300 solution = new LC0300();
